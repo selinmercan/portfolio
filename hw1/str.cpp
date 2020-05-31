@@ -52,8 +52,6 @@ Str::Str(const Str& s){
 			data_[i] = s.data_[i];
 		}
 		data_[n]='\0';
-		// for(int i=0; i<this->size(); i++) cout<< data_[i];
-		// cout << endl;
 	}
 }
 
@@ -71,9 +69,6 @@ Str& Str::operator=(const char* s){
 			data_[i] = s[i];
 		}
 		this->data_[n]='\0';
-		// for(int i=0; i<this->size(); i++) cout<< data_[i];
-		// cout << endl;
-		//size=size+1;
 	}
 	return *this;
 }
@@ -90,9 +85,6 @@ Str& Str::operator=(const Str& rhs){
 			data_[i] = rhs.data_[i];
 		}
 		this->data_[rhs.size()]='\0';
-		// for(int i=0; i<this->size(); i++) cout<< data_[i];
-		// cout << endl;
-		//size=size+1;
 	}
 	return *this;
 }
@@ -115,8 +107,6 @@ Str& Str::operator+=(const Str& s){
 		appended[this->size()+s.size()]='\0';
 		data_=appended;
 	}
-	// for(int i=0; i<this->size(); i++) cout<< data_[i];
-	// cout << endl;
 	return *this;
 }
 
@@ -138,15 +128,10 @@ Str& Str::operator+=(const char* s){
 		newstring[this->size()+newsize]='\0';
 		data_=newstring;
 	}
-	// for(int i=0; i<this->size(); i++) cout<< data_[i];
-	// cout << endl;
 	return *this;
 }
 
 size_t Str::size() const{
-	// size_t size_=0;
-	// while(this->data_[size_]!=0) size_++;
-	// size_-=1;
 	return strlen(this->data_);
 }
 
@@ -184,8 +169,6 @@ Str Str::operator+(const char* rhs) const{
 	}
 	newstring[this->size()+newsize]='\0';
 	temp.data_=newstring;
-	// for(int i=0; i<this->size(); i++) cout<< temp.data_[i];
-	// cout << endl;
 	return temp;
 }
 
@@ -203,17 +186,10 @@ Str Str::operator+(const Str& rhs) const{
 	}
 	newstring[this->size()+rhs.size()]='\0';
 	temp.data_=newstring;
-	// for(int i=0; i<temp.size(); i++) cout<< temp.data_[i];
-	// cout << endl;
 	return temp;
 }
 
 bool Str::operator==(const Str& rhs) const{
-	// for(int i=0; i<this->size(); i++) cout<< this->data_[i];
-	// cout << endl;
-	// for(int i=0; i<rhs.size(); i++) cout<< rhs.data_[i];
-	// cout << endl;
-	// cout << boolalpha << strcmp(this->data_,rhs.data_) << endl;
 	if(strcmp(this->data_,rhs.data_)==0) return true;
 	return false;
 }
@@ -260,4 +236,3 @@ std::ostream &operator<<(std::ostream& os, const Str& s){
 	return os;
 }
 
-//int main(){return 0;};
