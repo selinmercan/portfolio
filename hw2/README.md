@@ -1,0 +1,1 @@
+This project is on abstract data types, runtime, and STL Implementation. Major and setops makes use of our knowledge of appropriate ADT's, while the last problem makes use of our ability to assess runtime in a given program.
