@@ -25,7 +25,6 @@ void displayHits(vector<Tweet*>& hits)
   }
   if(hits.size() > 0){
     sort(hits.begin(), hits.end(), TweetComp());
-    cout << hits.size() << " matches:" << endl;
     for(vector<Tweet*>::iterator it = hits.begin(); it != hits.end(); ++it){
       cout << (**it) << endl;
     }
