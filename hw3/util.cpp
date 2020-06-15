@@ -20,9 +20,6 @@ void convUpper(string& s)
 
 void displayHits(vector<Tweet*>& hits)
 {
-  for(int i=0; i<hits.size(); i++){
-    cout << hits[i] << endl;
-  }
   if(hits.size() > 0){
     sort(hits.begin(), hits.end(), TweetComp());
     for(vector<Tweet*>::iterator it = hits.begin(); it != hits.end(); ++it){
