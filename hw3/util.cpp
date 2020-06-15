@@ -20,6 +20,9 @@ void convUpper(string& s)
 
 void displayHits(vector<Tweet*>& hits)
 {
+  for(int i=0; i<hits.size(); i++){
+    cout << hits[i] << endl;
+  }
   if(hits.size() > 0){
     sort(hits.begin(), hits.end(), TweetComp());
     cout << hits.size() << " matches:" << endl;

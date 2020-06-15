@@ -15,16 +15,20 @@ using namespace std;
  }
 
  User* TwitEng::find_User(string username){
+  convUpper(username);
   for(set<User*>::iterator it=users.begin(); it!=users.end();++it){
-  	if((*it)->name()==username){
-  		return *it;
-  	}
+  	string temp=(*it)->name();
+  	convUpper(temp);
+  	if(temp==username) return *it;
   }
   return 0;
  }
  bool TwitEng::exists(string username){
+ 	convUpper(username);
  	for(set<User*>::iterator it=users.begin(); it!=users.end(); ++it){
- 		if((*it)->name()==username)return true;
+ 		string temp=(*it)->name();
+ 		convUpper(temp);
+ 		if(temp==username) return true;
  	}
  	return false;
  }
@@ -37,7 +41,7 @@ using namespace std;
  bool TwitEng::parse(char* filename){
  	ifstream ifile(filename);
  	ifile>>num_users;
- 	if(ifile.fail())return false;
+ 	if(ifile.fail())return true;
  	string parse;
  	getline(ifile, parse);
  	for(int i=0; i<num_users; i++){
@@ -45,7 +49,6 @@ using namespace std;
  		stringstream ss(parse);
  		string user;
  		ss>>user;
- 		cout << user << endl;
  		if(!exists(user)){
  			User* user1=new User(user);
 	 		while(!ss.fail()){
@@ -80,13 +83,13 @@ using namespace std;
  	}
 
  	while(getline(ifile, parse)){
- 		cout << parse << endl;
  		if(parse.empty()) continue;
  		int position=0;
  		while(isspace(parse[position]))position++;
- 		if(!isdigit(parse[position])) return false;
+ 		if(!isdigit(parse[position])) return true;
  		DateTime* date_time=new DateTime();
- 		ifile>>*date_time;
+ 		stringstream s1(parse);
+ 		s1>>*date_time;
  		while(!isalpha(parse[position]))position++;
  		stringstream ss(parse.substr(position));
  		string text, username;
@@ -96,14 +99,11 @@ using namespace std;
  			ss>>temp;
  			text+=temp+ " ";
  		}
- 		cout << text << endl;
- 		//User* temp=find_User(username);
- 		//cout << parse.substr(position) << endl;
  		addTweet(username, *date_time, text); 
 
  		
  	}
- 	return true;
+ 	return false;
 
  }//how do i open the file
 
@@ -115,24 +115,42 @@ using namespace std;
   */
  //do I create a new user if i cannot find the username??
  void TwitEng::addTweet(const std::string& username, const DateTime& time, const std::string& text){
- 	User* temp=find_User(username);
- 	Tweet* new_tweet=new Tweet(temp, time, text);
- 	stringstream ss(text);
- 	cout << text << endl;
- 	while(!ss.fail()){
- 		string temp1;
- 		ss>>temp1;
- 		if(temp1[0]=='#'){
- 			temp1=temp1.substr(1);
- 			convUpper(temp1);
- 			cout << temp1 << endl;
- 			hashtags[temp1].insert(new_tweet); //do this in addTweet
- 			if(new_tweet->hashTags().find(temp1.substr(1))==new_tweet->hashTags().end())new_tweet->hashTags().insert(temp1.substr(1));
- 		}
- 		//text+=temp1;
- 	}
+ 	if(exists(username)){
+	 	User* temp=find_User(username);
+	 	Tweet* new_tweet=new Tweet(temp, time, text);
+	 	stringstream ss(text);
+	 	while(!ss.fail()){
+	 		string temp1;
+	 		ss>>temp1;
+	 		if(temp1[0]=='#'){
+	 			temp1=temp1.substr(1);
+	 			convUpper(temp1);
+	 			if(hashtags[temp1].find(new_tweet)==hashtags[temp1].end())hashtags[temp1].insert(new_tweet); 
+	 			if(new_tweet->hashTags().find(temp1.substr(1))==new_tweet->hashTags().end())new_tweet->hashTags().insert(temp1.substr(1));
+	 		}
+	 	}
 
- 	temp->addTweet(new_tweet);
+	 	temp->addTweet(new_tweet);
+	 }
+	 else{
+	 	User* temp= new User(username);
+	 	users.insert(temp);
+	 	Tweet* new_tweet=new Tweet(temp, time, text);
+	 	stringstream ss(text);
+	 	while(!ss.fail()){
+	 		string temp1;
+	 		ss>>temp1;
+	 		if(temp1[0]=='#'){
+	 			temp1=temp1.substr(1);
+	 			convUpper(temp1);
+	 			if(hashtags[temp1].find(new_tweet)==hashtags[temp1].end())hashtags[temp1].insert(new_tweet); 
+	 			if(new_tweet->hashTags().find(temp1.substr(1))==new_tweet->hashTags().end())new_tweet->hashTags().insert(temp1.substr(1));
+	 		}
+	 	}
+
+	 	temp->addTweet(new_tweet);
+
+	 }
 
 
  }
@@ -161,7 +179,7 @@ using namespace std;
 	 	if(strategy==0){
 	 		set<Tweet*> intersect= intersection(set1, set2);
 	 		if(terms.size()<=2){
-	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.begin(); ++it){
+	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
 	 			return texts;
@@ -171,7 +189,7 @@ using namespace std;
 	 				convUpper(terms[i]);
 	 				intersect= intersection(intersect, hashtags[terms[i]]);
 	 			}
-	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.begin(); ++it){
+	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
 	 			return texts;
@@ -180,7 +198,7 @@ using namespace std;
 	 	else{
 	 		set<Tweet*> union_of=union_(set1, set2);
 	 		if(terms.size()<=2){
-	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.begin(); ++it){
+	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
 	 			return texts;
@@ -190,7 +208,7 @@ using namespace std;
 	 				convUpper(terms[i]);
 	 				union_of= union_(union_of, hashtags[terms[i]]);
 	 			}
-	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.begin(); ++it){
+	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
 	 			return texts;
@@ -231,7 +249,7 @@ set<Tweet*> TwitEng::union_(set<Tweet*>& s1, set<Tweet*>& s2){
  		ofile<<(*it)->name() << endl;
  		vector<Tweet*> feed=(*it)->getFeed();
  		for(unsigned int i=0; i<feed.size(); i++){
- 			ofile<<feed[i] << endl;
+ 			ofile<<*(feed[i]) << endl;
  		}
  		ofile.close();
  	}

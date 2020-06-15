@@ -83,9 +83,4 @@ using namespace std;
   return user_;
  }//when you output a user, you need to output their username 
 
- /* You may add other member functions */
-// private:
-//  User* user_;
-//  DateTime* time_;//I DO NOT KNOW IF THIS SHOULD BE A POINTER
-//  set<string> hashtagged;
-//  string* text_;//THIS TOO
+

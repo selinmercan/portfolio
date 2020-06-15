@@ -42,22 +42,18 @@ class TwitEng
    */
   std::vector<Tweet*> search(std::vector<std::string>& terms, int strategy);
 
-  std::set<Tweet*> operator&(const std::set<Tweet*>& other);
+  std::set<Tweet*> intersection(std::set<Tweet*>& s1, std::set<Tweet*>& s2); //computes the intersection of two sets
 
-  std::set<Tweet*> operator|(const std::set<Tweet*>& other);
-
-  std::set<Tweet*> intersection(std::set<Tweet*>& s1, std::set<Tweet*>& s2);
-
-  std::set<Tweet*> union_(std::set<Tweet*>& s1, std::set<Tweet*>& s2);
+  std::set<Tweet*> union_(std::set<Tweet*>& s1, std::set<Tweet*>& s2);//computes the union of two sets
 
   /**
    * Dump feeds of each user to their own file
    */
   void dumpFeeds();
 
-  User* find_User(std::string username);
+  User* find_User(std::string username);//returns a pointer to a user when its username is given only 
 
-  bool exists(std::string username);
+  bool exists(std::string username);//checks if a user exists from a given username
 
   /* You may add other member functions */
  private:

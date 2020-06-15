@@ -45,12 +45,15 @@ bool AndHandler::canHandle(const std::string& cmd) const
 Handler::HANDLER_STATUS_T AndHandler::process(TwitEng* eng, std::istream& instr) const
 {
 	vector<string> tags;
+	string temp;
+	getline(instr, temp);
 	if(instr.fail()) return HANDLER_ERROR;
-	while(!instr.fail()){
-		string temp;
-		instr>>temp;
-		if(temp.empty()) return HANDLER_ERROR;
-		tags.push_back(temp);
+	stringstream ss(temp);
+	while(!ss.fail()){
+		string temp2;
+		ss>>temp2;
+		if(temp2.empty()) continue;
+		tags.push_back(temp2);
 	}
 	vector<Tweet*> returned;
 	returned=eng->search(tags, 0);
@@ -78,12 +81,16 @@ bool OrHandler::canHandle(const std::string& cmd) const
 Handler::HANDLER_STATUS_T OrHandler::process(TwitEng* eng, std::istream& instr) const
 {
 	vector<string> tags;
+	string temp;
+	getline(instr, temp);
 	if(instr.fail()) return HANDLER_ERROR;
-	while(!instr.fail()){
-		string temp;
-		instr>>temp;
-		if(temp.empty()) return HANDLER_ERROR;
-		tags.push_back(temp);
+	stringstream ss(temp);
+	while(!ss.fail()){
+		string temp2;
+		ss>>temp2;
+		if(temp2.empty()) continue;
+		//if(temp2.empty()) return HANDLER_ERROR;
+		tags.push_back(temp2);
 		//size++;
 	}
 	vector<Tweet*> returned;
@@ -118,7 +125,7 @@ Handler::HANDLER_STATUS_T TweetHandler::process(TwitEng* eng, std::istream& inst
 	while(!instr.fail()){
 		string temp1;
 		instr>>temp1;
-		text+=temp1;
+		text+=temp1+ " ";
 	}
 	DateTime time;
 	eng->addTweet(username, time, text);

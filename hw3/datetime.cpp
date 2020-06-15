@@ -5,6 +5,7 @@
 #include <list>
 #include <vector>
 #include <ctime>
+#include <time.h>
 using namespace std;
 DateTime::DateTime(){
 	time_t rawtime;
@@ -12,7 +13,7 @@ DateTime::DateTime(){
 
 	time (&rawtime);
 	timeinfo = localtime(&rawtime);
-	this->year=timeinfo->tm_year;
+	this->year=timeinfo->tm_year+1900;
 	this->month=timeinfo->tm_mon;
 	this->day=timeinfo->tm_mday;
 	this->hour=timeinfo->tm_hour;
@@ -154,6 +155,7 @@ istream& operator>>(std::istream& is, DateTime& dt){
 		time (&rawtime);
 		timeinfo = localtime(&rawtime);
 		dt.year=timeinfo->tm_year;
+		dt.year+=1900;
 		dt.month=timeinfo->tm_mon;
 		dt.day=timeinfo->tm_mday;
 		dt.hour=timeinfo->tm_hour;
