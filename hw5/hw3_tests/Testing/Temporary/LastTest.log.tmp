@@ -1,0 +1,740 @@
+Start testing: Jul 01 15:59 PDT
+----------------------------------------------------------
+1/68 Testing: AndTest.NoHashTags
+1/68 Test: AndTest.NoHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=AndTest.NoHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"AndTest.NoHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11066== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11066==     or is world writeable, or is not owned by the current user.
+==11066== Memcheck, a memory error detector
+==11066== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11066== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11066== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=AndTest.NoHashTags
+==11066== 
+Running main() from gtest_main.cc
+Note: Google Test filter = AndTest.NoHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AndTest
+[ RUN      ] AndTest.NoHashTags
+[       OK ] AndTest.NoHashTags (165 ms)
+[----------] 1 test from AndTest (173 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (205 ms total)
+[  PASSED  ] 1 test.
+==11066== 
+==11066== HEAP SUMMARY:
+==11066==     in use at exit: 72,968 bytes in 12 blocks
+==11066==   total heap usage: 452 allocs, 440 frees, 148,357 bytes allocated
+==11066== 
+==11066== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11066==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11066==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11066==    by 0x40745E: AndTest_NoHashTags_Test::TestBody() (search_tests.cpp:54)
+==11066==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11066== 
+==11066== LEAK SUMMARY:
+==11066==    definitely lost: 264 bytes in 11 blocks
+==11066==    indirectly lost: 0 bytes in 0 blocks
+==11066==      possibly lost: 0 bytes in 0 blocks
+==11066==    still reachable: 72,704 bytes in 1 blocks
+==11066==         suppressed: 0 bytes in 0 blocks
+==11066== Reachable blocks (those to which a pointer was found) are not shown.
+==11066== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11066== 
+==11066== For counts of detected and suppressed errors, rerun with: -v
+==11066== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.01 sec
+----------------------------------------------------------
+Test Passed.
+"AndTest.NoHashTags" end time: Jul 01 15:59 PDT
+"AndTest.NoHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/68 Testing: AndTest.MissingHashTags
+2/68 Test: AndTest.MissingHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=AndTest.MissingHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"AndTest.MissingHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11067== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11067==     or is world writeable, or is not owned by the current user.
+==11067== Memcheck, a memory error detector
+==11067== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11067== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11067== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=AndTest.MissingHashTags
+==11067== 
+Running main() from gtest_main.cc
+Note: Google Test filter = AndTest.MissingHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AndTest
+[ RUN      ] AndTest.MissingHashTags
+[       OK ] AndTest.MissingHashTags (163 ms)
+[----------] 1 test from AndTest (170 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (204 ms total)
+[  PASSED  ] 1 test.
+==11067== 
+==11067== HEAP SUMMARY:
+==11067==     in use at exit: 72,968 bytes in 12 blocks
+==11067==   total heap usage: 453 allocs, 441 frees, 148,424 bytes allocated
+==11067== 
+==11067== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11067==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11067==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11067==    by 0x407778: AndTest_MissingHashTags_Test::TestBody() (search_tests.cpp:71)
+==11067==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11067== 
+==11067== LEAK SUMMARY:
+==11067==    definitely lost: 264 bytes in 11 blocks
+==11067==    indirectly lost: 0 bytes in 0 blocks
+==11067==      possibly lost: 0 bytes in 0 blocks
+==11067==    still reachable: 72,704 bytes in 1 blocks
+==11067==         suppressed: 0 bytes in 0 blocks
+==11067== Reachable blocks (those to which a pointer was found) are not shown.
+==11067== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11067== 
+==11067== For counts of detected and suppressed errors, rerun with: -v
+==11067== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.02 sec
+----------------------------------------------------------
+Test Passed.
+"AndTest.MissingHashTags" end time: Jul 01 15:59 PDT
+"AndTest.MissingHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+3/68 Testing: AndTest.TwoHashTags
+3/68 Test: AndTest.TwoHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=AndTest.TwoHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"AndTest.TwoHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11069== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11069==     or is world writeable, or is not owned by the current user.
+==11069== Memcheck, a memory error detector
+==11069== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11069== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11069== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=AndTest.TwoHashTags
+==11069== 
+Running main() from gtest_main.cc
+Note: Google Test filter = AndTest.TwoHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AndTest
+[ RUN      ] AndTest.TwoHashTags
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+[  FAILED  ] AndTest.TwoHashTags (454 ms)
+[----------] 1 test from AndTest (461 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (493 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] AndTest.TwoHashTags
+
+ 1 FAILED TEST
+==11069== 
+==11069== HEAP SUMMARY:
+==11069==     in use at exit: 72,968 bytes in 12 blocks
+==11069==   total heap usage: 1,585 allocs, 1,573 frees, 187,943 bytes allocated
+==11069== 
+==11069== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11069==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11069==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11069==    by 0x407A44: AndTest_TwoHashTags_Test::TestBody() (search_tests.cpp:86)
+==11069==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11069== 
+==11069== LEAK SUMMARY:
+==11069==    definitely lost: 264 bytes in 11 blocks
+==11069==    indirectly lost: 0 bytes in 0 blocks
+==11069==      possibly lost: 0 bytes in 0 blocks
+==11069==    still reachable: 72,704 bytes in 1 blocks
+==11069==         suppressed: 0 bytes in 0 blocks
+==11069== Reachable blocks (those to which a pointer was found) are not shown.
+==11069== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11069== 
+==11069== For counts of detected and suppressed errors, rerun with: -v
+==11069== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.26 sec
+----------------------------------------------------------
+Test Failed.
+"AndTest.TwoHashTags" end time: Jul 01 15:59 PDT
+"AndTest.TwoHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+4/68 Testing: AndTest.OneHashTags
+4/68 Test: AndTest.OneHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=AndTest.OneHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"AndTest.OneHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11079== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11079==     or is world writeable, or is not owned by the current user.
+==11079== Memcheck, a memory error detector
+==11079== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11079== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11079== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=AndTest.OneHashTags
+==11079== 
+Running main() from gtest_main.cc
+Note: Google Test filter = AndTest.OneHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AndTest
+[ RUN      ] AndTest.OneHashTags
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+[  FAILED  ] AndTest.OneHashTags (506 ms)
+[----------] 1 test from AndTest (512 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (543 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] AndTest.OneHashTags
+
+ 1 FAILED TEST
+==11079== 
+==11079== HEAP SUMMARY:
+==11079==     in use at exit: 72,968 bytes in 12 blocks
+==11079==   total heap usage: 2,141 allocs, 2,129 frees, 207,007 bytes allocated
+==11079== 
+==11079== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11079==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11079==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11079==    by 0x408056: AndTest_OneHashTags_Test::TestBody() (search_tests.cpp:110)
+==11079==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11079== 
+==11079== LEAK SUMMARY:
+==11079==    definitely lost: 264 bytes in 11 blocks
+==11079==    indirectly lost: 0 bytes in 0 blocks
+==11079==      possibly lost: 0 bytes in 0 blocks
+==11079==    still reachable: 72,704 bytes in 1 blocks
+==11079==         suppressed: 0 bytes in 0 blocks
+==11079== Reachable blocks (those to which a pointer was found) are not shown.
+==11079== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11079== 
+==11079== For counts of detected and suppressed errors, rerun with: -v
+==11079== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.33 sec
+----------------------------------------------------------
+Test Failed.
+"AndTest.OneHashTags" end time: Jul 01 15:59 PDT
+"AndTest.OneHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+5/68 Testing: OrTest.NoHashTags
+5/68 Test: OrTest.NoHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=OrTest.NoHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"OrTest.NoHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11088== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11088==     or is world writeable, or is not owned by the current user.
+==11088== Memcheck, a memory error detector
+==11088== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11088== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11088== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=OrTest.NoHashTags
+==11088== 
+Running main() from gtest_main.cc
+Note: Google Test filter = OrTest.NoHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from OrTest
+[ RUN      ] OrTest.NoHashTags
+[       OK ] OrTest.NoHashTags (162 ms)
+[----------] 1 test from OrTest (170 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (200 ms total)
+[  PASSED  ] 1 test.
+==11088== 
+==11088== HEAP SUMMARY:
+==11088==     in use at exit: 72,968 bytes in 12 blocks
+==11088==   total heap usage: 452 allocs, 440 frees, 148,350 bytes allocated
+==11088== 
+==11088== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11088==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11088==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11088==    by 0x408660: OrTest_NoHashTags_Test::TestBody() (search_tests.cpp:136)
+==11088==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11088== 
+==11088== LEAK SUMMARY:
+==11088==    definitely lost: 264 bytes in 11 blocks
+==11088==    indirectly lost: 0 bytes in 0 blocks
+==11088==      possibly lost: 0 bytes in 0 blocks
+==11088==    still reachable: 72,704 bytes in 1 blocks
+==11088==         suppressed: 0 bytes in 0 blocks
+==11088== Reachable blocks (those to which a pointer was found) are not shown.
+==11088== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11088== 
+==11088== For counts of detected and suppressed errors, rerun with: -v
+==11088== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   0.96 sec
+----------------------------------------------------------
+Test Passed.
+"OrTest.NoHashTags" end time: Jul 01 15:59 PDT
+"OrTest.NoHashTags" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/68 Testing: OrTest.MissingHashTags
+6/68 Test: OrTest.MissingHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=OrTest.MissingHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"OrTest.MissingHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11089== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11089==     or is world writeable, or is not owned by the current user.
+==11089== Memcheck, a memory error detector
+==11089== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11089== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11089== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=OrTest.MissingHashTags
+==11089== 
+Running main() from gtest_main.cc
+Note: Google Test filter = OrTest.MissingHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from OrTest
+[ RUN      ] OrTest.MissingHashTags
+[       OK ] OrTest.MissingHashTags (193 ms)
+[----------] 1 test from OrTest (199 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (236 ms total)
+[  PASSED  ] 1 test.
+==11089== 
+==11089== HEAP SUMMARY:
+==11089==     in use at exit: 72,968 bytes in 12 blocks
+==11089==   total heap usage: 453 allocs, 441 frees, 148,417 bytes allocated
+==11089== 
+==11089== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11089==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11089==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11089==    by 0x40897A: OrTest_MissingHashTags_Test::TestBody() (search_tests.cpp:153)
+==11089==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11089== 
+==11089== LEAK SUMMARY:
+==11089==    definitely lost: 264 bytes in 11 blocks
+==11089==    indirectly lost: 0 bytes in 0 blocks
+==11089==      possibly lost: 0 bytes in 0 blocks
+==11089==    still reachable: 72,704 bytes in 1 blocks
+==11089==         suppressed: 0 bytes in 0 blocks
+==11089== Reachable blocks (those to which a pointer was found) are not shown.
+==11089== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11089== 
+==11089== For counts of detected and suppressed errors, rerun with: -v
+==11089== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.05 sec
+----------------------------------------------------------
+Test Passed.
+"OrTest.MissingHashTags" end time: Jul 01 15:59 PDT
+"OrTest.MissingHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+7/68 Testing: OrTest.TwoHashTags
+7/68 Test: OrTest.TwoHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=OrTest.TwoHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"OrTest.TwoHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11090== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11090==     or is world writeable, or is not owned by the current user.
+==11090== Memcheck, a memory error detector
+==11090== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11090== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11090== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=OrTest.TwoHashTags
+==11090== 
+Running main() from gtest_main.cc
+Note: Google Test filter = OrTest.TwoHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from OrTest
+[ RUN      ] OrTest.TwoHashTags
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+[  FAILED  ] OrTest.TwoHashTags (503 ms)
+[----------] 1 test from OrTest (511 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (540 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] OrTest.TwoHashTags
+
+ 1 FAILED TEST
+==11090== 
+==11090== HEAP SUMMARY:
+==11090==     in use at exit: 72,968 bytes in 12 blocks
+==11090==   total heap usage: 2,149 allocs, 2,137 frees, 207,352 bytes allocated
+==11090== 
+==11090== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11090==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11090==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11090==    by 0x408C46: OrTest_TwoHashTags_Test::TestBody() (search_tests.cpp:168)
+==11090==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11090== 
+==11090== LEAK SUMMARY:
+==11090==    definitely lost: 264 bytes in 11 blocks
+==11090==    indirectly lost: 0 bytes in 0 blocks
+==11090==      possibly lost: 0 bytes in 0 blocks
+==11090==    still reachable: 72,704 bytes in 1 blocks
+==11090==         suppressed: 0 bytes in 0 blocks
+==11090== Reachable blocks (those to which a pointer was found) are not shown.
+==11090== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11090== 
+==11090== For counts of detected and suppressed errors, rerun with: -v
+==11090== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.40 sec
+----------------------------------------------------------
+Test Failed.
+"OrTest.TwoHashTags" end time: Jul 01 15:59 PDT
+"OrTest.TwoHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+8/68 Testing: OrTest.OneHashTags
+8/68 Test: OrTest.OneHashTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=OrTest.OneHashTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"OrTest.OneHashTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11100== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11100==     or is world writeable, or is not owned by the current user.
+==11100== Memcheck, a memory error detector
+==11100== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11100== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11100== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=OrTest.OneHashTags
+==11100== 
+Running main() from gtest_main.cc
+Note: Google Test filter = OrTest.OneHashTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from OrTest
+[ RUN      ] OrTest.OneHashTags
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+[  FAILED  ] OrTest.OneHashTags (474 ms)
+[----------] 1 test from OrTest (481 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (512 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] OrTest.OneHashTags
+
+ 1 FAILED TEST
+==11100== 
+==11100== HEAP SUMMARY:
+==11100==     in use at exit: 72,968 bytes in 12 blocks
+==11100==   total heap usage: 2,141 allocs, 2,129 frees, 207,000 bytes allocated
+==11100== 
+==11100== 264 bytes in 11 blocks are definitely lost in loss record 1 of 2
+==11100==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11100==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11100==    by 0x4092AC: OrTest_OneHashTags_Test::TestBody() (search_tests.cpp:193)
+==11100==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11100== 
+==11100== LEAK SUMMARY:
+==11100==    definitely lost: 264 bytes in 11 blocks
+==11100==    indirectly lost: 0 bytes in 0 blocks
+==11100==      possibly lost: 0 bytes in 0 blocks
+==11100==    still reachable: 72,704 bytes in 1 blocks
+==11100==         suppressed: 0 bytes in 0 blocks
+==11100== Reachable blocks (those to which a pointer was found) are not shown.
+==11100== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11100== 
+==11100== For counts of detected and suppressed errors, rerun with: -v
+==11100== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.30 sec
+----------------------------------------------------------
+Test Failed.
+"OrTest.OneHashTags" end time: Jul 01 15:59 PDT
+"OrTest.OneHashTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+9/68 Testing: OrTest.DoubleTags
+9/68 Test: OrTest.DoubleTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=OrTest.DoubleTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"OrTest.DoubleTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11109== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11109==     or is world writeable, or is not owned by the current user.
+==11109== Memcheck, a memory error detector
+==11109== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11109== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11109== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=OrTest.DoubleTags
+==11109== 
+Running main() from gtest_main.cc
+Note: Google Test filter = OrTest.DoubleTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from OrTest
+[ RUN      ] OrTest.DoubleTags
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+[  FAILED  ] OrTest.DoubleTags (428 ms)
+[----------] 1 test from OrTest (440 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (476 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] OrTest.DoubleTags
+
+ 1 FAILED TEST
+==11109== 
+==11109== HEAP SUMMARY:
+==11109==     in use at exit: 72,728 bytes in 2 blocks
+==11109==   total heap usage: 824 allocs, 822 frees, 160,112 bytes allocated
+==11109== 
+==11109== 24 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==11109==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11109==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11109==    by 0x4098BE: OrTest_DoubleTags_Test::TestBody() (search_tests.cpp:219)
+==11109==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11109== 
+==11109== LEAK SUMMARY:
+==11109==    definitely lost: 24 bytes in 1 blocks
+==11109==    indirectly lost: 0 bytes in 0 blocks
+==11109==      possibly lost: 0 bytes in 0 blocks
+==11109==    still reachable: 72,704 bytes in 1 blocks
+==11109==         suppressed: 0 bytes in 0 blocks
+==11109== Reachable blocks (those to which a pointer was found) are not shown.
+==11109== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11109== 
+==11109== For counts of detected and suppressed errors, rerun with: -v
+==11109== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.27 sec
+----------------------------------------------------------
+Test Failed.
+"OrTest.DoubleTags" end time: Jul 01 15:59 PDT
+"OrTest.DoubleTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+10/68 Testing: AndTest.DoubleTags
+10/68 Test: AndTest.DoubleTags
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests" "--gtest_filter=AndTest.DoubleTags"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"AndTest.DoubleTags" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+==11118== /home/student/.valgrindrc was not read as it is either not a regular file,
+==11118==     or is world writeable, or is not owned by the current user.
+==11118== Memcheck, a memory error detector
+==11118== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11118== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11118== Command: /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests --gtest_filter=AndTest.DoubleTags
+==11118== 
+Running main() from gtest_main.cc
+Note: Google Test filter = AndTest.DoubleTags
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AndTest
+[ RUN      ] AndTest.DoubleTags
+/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests.cpp:44: Failure
+Value of: regex_match(s.str(), re)
+  Actual: false
+Expected: true
+[  FAILED  ] AndTest.DoubleTags (467 ms)
+[----------] 1 test from AndTest (475 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (511 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] AndTest.DoubleTags
+
+ 1 FAILED TEST
+==11118== 
+==11118== HEAP SUMMARY:
+==11118==     in use at exit: 72,728 bytes in 2 blocks
+==11118==   total heap usage: 824 allocs, 822 frees, 160,119 bytes allocated
+==11118== 
+==11118== 24 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==11118==    at 0x4C2E17F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11118==    by 0x438C33: TwitEng::parse(char*) (twiteng.cpp:100)
+==11118==    by 0x409E28: AndTest_DoubleTags_Test::TestBody() (search_tests.cpp:243)
+==11118==    by 0x465912: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118==    by 0x45D6D3: testing::Test::Run() [clone .part.368] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118==    by 0x45D98C: testing::TestInfo::Run() [clone .part.369] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118==    by 0x45DB74: testing::TestCase::Run() [clone .part.370] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118==    by 0x460020: testing::internal::UnitTestImpl::RunAllTests() [clone .part.371] [clone .constprop.426] (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118==    by 0x460430: testing::UnitTest::Run() (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118==    by 0x406A8F: main (in /home/student/hw-mercan/hw5/hw3_tests/search_tests/search_tests)
+==11118== 
+==11118== LEAK SUMMARY:
+==11118==    definitely lost: 24 bytes in 1 blocks
+==11118==    indirectly lost: 0 bytes in 0 blocks
+==11118==      possibly lost: 0 bytes in 0 blocks
+==11118==    still reachable: 72,704 bytes in 1 blocks
+==11118==         suppressed: 0 bytes in 0 blocks
+==11118== Reachable blocks (those to which a pointer was found) are not shown.
+==11118== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11118== 
+==11118== For counts of detected and suppressed errors, rerun with: -v
+==11118== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.30 sec
+----------------------------------------------------------
+Test Failed.
+"AndTest.DoubleTags" end time: Jul 01 15:59 PDT
+"AndTest.DoubleTags" time elapsed: 00:00:01
+----------------------------------------------------------
+
+11/68 Testing: SearchRuntime.And
+11/68 Test: SearchRuntime.And
+Command: "/home/student/hw-mercan/hw5/hw3_tests/search_tests/search_runtime_tests" "--gtest_filter=SearchRuntime.And"
+Directory: /home/student/hw-mercan/hw5/hw3_tests/search_tests
+"SearchRuntime.And" start time: Jul 01 15:59 PDT
+Output:
+----------------------------------------------------------
+Running main() from gtest_main.cc
+Note: Google Test filter = SearchRuntime.And
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from SearchRuntime
+[ RUN      ] SearchRuntime.And
+>> Evaluating runtime of AND
+Testing if time complexity could be linear...
+Correlation factor (1.8442) is >= threshold (1.4000)
+>> Time complexity of AND is likely linear
+Testing if time complexity could be constant...
+Correlation factor (-2.4545) is < threshold (1.4000)
+Testing if time complexity could be logarithmic...
+Correlation factor (-0.9819) is < threshold (1.4000)
+Testing if time complexity could be linearithmic...
+Correlation factor (2.2360) is >= threshold (1.4000)
+>> Time complexity of AND is likely linearithmic
+Testing if time complexity could be quadratic...
+Correlation factor (0.9689) is < threshold (1.4000)
+Testing if time complexity could be cubic...
+Correlation factor (0.5403) is < threshold (1.4000)
+[       OK ] SearchRuntime.And (1886 ms)
+[----------] 1 test from SearchRuntime (1886 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1886 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   1.89 sec
+----------------------------------------------------------
+Test Passed.
+"SearchRuntime.And" end time: Jul 01 15:59 PDT
+"SearchRuntime.And" time elapsed: 00:00:01
+----------------------------------------------------------
+

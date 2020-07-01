@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -g3 -O0   CMakeFiles/tweet_tests.dir/comparator_tests.cpp.o CMakeFiles/tweet_tests.dir/constructor_tests.cpp.o CMakeFiles/tweet_tests.dir/ostream_tests.cpp.o  -o tweet_tests libhw3_tweet.a ../testing_utils/libtesting_utils.a /usr/lib/libgtest_main.a /usr/lib/libgtest.a -lpthread ../testing_utils/kwsys/libkwsys.a ../testing_utils/libperf/libperf.a 

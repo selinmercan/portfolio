@@ -1,0 +1,89 @@
+AndTest.NoHashTags 7 0.116773
+AndTest.MissingHashTags 7 0.122527
+AndTest.TwoHashTags 0 0
+AndTest.OneHashTags 0 0
+OrTest.NoHashTags 7 0.116913
+OrTest.MissingHashTags 7 0.115336
+OrTest.TwoHashTags 0 0
+OrTest.OneHashTags 0 0
+OrTest.DoubleTags 0 0
+AndTest.DoubleTags 0 0
+SearchRuntime.And 1 1.53291
+SearchRuntime.Or 1 2.83129
+AndHandlerTest.CanHandle 7 0.0989119
+AndHandlerTest.ProcessAndOneHashtag 3 0
+AndHandlerTest.ProcessAndTwoHashtags 0 0
+AndHandlerTest.ProcessAndManyHashtag 0 0
+AndHandlerTest.ProcessAndNoResults 3 0
+OrHandlerTest.CanHandle 7 0.100061
+OrHandlerTest.ProcessOrOneHashtag 6 0
+OrHandlerTest.ProcessOrTwoHashtags 0 0
+OrHandlerTest.ProcessOrManyHashtag 0 0
+OrHandlerTest.ProcessOrNoResults 6 0
+TweetHandlerTest.CanHandle 7 0.0993468
+TweetHandlerTest.AddTweetThenSearch 0 0
+TweetHandlerTest.AddTweetInvalidUser 5 0.167164
+TweetHandlerTest.CaseInsensitiveHashtagTest 0 0
+Constructor.BlankString 7 0.102133
+Constructor.NormalString 7 0.106625
+Feed.NotFollowing 7 0.106338
+Feed.FollowingButNoTweets 7 0.107772
+Feed.Small 7 0.116112
+Feed.Medium 7 0.114869
+Feed.Large 7 0.114821
+Follower.NewUser 7 0.108999
+Follower.UserAlreadyInSet 7 0.106541
+Following.NewUser 7 0.108938
+Following.UserAlreadyInSet 7 0.107433
+Tweets.BlankTweet 7 0.109135
+Tweets.NormalTweet 7 0.111654
+Tweets.ListTweets 7 0.112706
+TweetComparator.LessThanIsTrue 7 0.107678
+TweetComparator.LessThanIsFalse 7 0.10842
+TweetComparator.BothAreEqual 7 0.108929
+TweetConstructor.Default 7 0.108157
+TweetConstructor.NoText 7 0.107073
+TweetConstructor.WithText 7 0.107038
+OStream.EmptyTweet 0 0
+OStream.ShortTweet 0 0
+OStream.LongTweet 0 0
+DateTimeComparator.LessThanIsTrue 7 0.101151
+DateTimeComparator.LessThanIsFalse 7 0.102227
+DateTimeComparator.BothAreEqual 7 0.104648
+DateTimeConstructor.Default 7 0.105544
+DateTimeConstructor.Alt 7 0.102497
+IStream.ProperFormat 7 0.105897
+IStream.ImproperFormat 7 0.108941
+OStream.Default 0 0
+OStream.Normal 7 0.10217
+Parse.Empty 7 0.10659
+Parse.FileDoesNotExist 7 0.10528
+Parse.ImproperFormat 7 0.100883
+Parse.Short 7 0.123974
+Parse.Medium 7 0.126326
+Parse.Long 7 0.12881
+AddTweet.NoText 7 0.128083
+AddTweet.AddShort 7 0.126495
+AddTweet.AddMedium 7 0.122983
+AddTweet.AddLong 7 0.12467
+---
+AndTest.TwoHashTags
+AndTest.OneHashTags
+OrTest.TwoHashTags
+OrTest.OneHashTags
+OrTest.DoubleTags
+AndTest.DoubleTags
+AndHandlerTest.ProcessAndOneHashtag
+AndHandlerTest.ProcessAndTwoHashtags
+AndHandlerTest.ProcessAndManyHashtag
+AndHandlerTest.ProcessAndNoResults
+OrHandlerTest.ProcessOrOneHashtag
+OrHandlerTest.ProcessOrTwoHashtags
+OrHandlerTest.ProcessOrManyHashtag
+OrHandlerTest.ProcessOrNoResults
+TweetHandlerTest.AddTweetThenSearch
+TweetHandlerTest.CaseInsensitiveHashtagTest
+OStream.EmptyTweet
+OStream.ShortTweet
+OStream.LongTweet
+OStream.Default
