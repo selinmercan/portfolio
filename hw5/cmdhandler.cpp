@@ -45,19 +45,18 @@ bool AndHandler::canHandle(const std::string& cmd) const
 Handler::HANDLER_STATUS_T AndHandler::process(TwitEng* eng, std::istream& instr) const
 {
 	vector<string> tags;
-	string temp;
-	getline(instr, temp);
+	//string temp;
+	//getline(instr, temp);
 	if(instr.fail()) return HANDLER_ERROR;
-	stringstream ss(temp);
-	while(!ss.fail()){
-		string temp2;
-		ss>>temp2;
+	//stringstream ss(temp);
+	string temp2;
+	while(instr>>temp2){
 		if(temp2.empty()) continue;
 		tags.push_back(temp2);
 	}
+	//for(int i=0; i<tags.size(); i++)std::cout<<tags[i]<<std::endl;
 	vector<Tweet*> returned;
 	returned=eng->search(tags, 0);
-	std::cout<<returned.size()<< " matches:" << std::endl;
 	displayHits(returned);
 	return HANDLER_OK;
 }
@@ -82,13 +81,12 @@ bool OrHandler::canHandle(const std::string& cmd) const
 Handler::HANDLER_STATUS_T OrHandler::process(TwitEng* eng, std::istream& instr) const
 {
 	vector<string> tags;
-	string temp;
-	getline(instr, temp);
+	//string temp;
+	//getline(instr, temp);
 	if(instr.fail()) return HANDLER_ERROR;
-	stringstream ss(temp);
-	while(!ss.fail()){
-		string temp2;
-		ss>>temp2;
+	//stringstream ss(temp);
+	string temp2;
+	while(instr>>temp2){
 		if(temp2.empty()) continue;
 		//if(temp2.empty()) return HANDLER_ERROR;
 		tags.push_back(temp2);
@@ -96,7 +94,6 @@ Handler::HANDLER_STATUS_T OrHandler::process(TwitEng* eng, std::istream& instr) 
 	}
 	vector<Tweet*> returned;
 	returned=eng->search(tags, 1);
-	std::cout<<returned.size()<< " matches:" << std::endl;
 	displayHits(returned);
 	return HANDLER_OK;
 }
@@ -120,19 +117,28 @@ bool TweetHandler::canHandle(const std::string& cmd) const
 
 Handler::HANDLER_STATUS_T TweetHandler::process(TwitEng* eng, std::istream& instr) const
 {
-	if(instr.fail()) return HANDLER_ERROR;
 	string username;
 	instr>>username;
-	if(eng->exists(username)==false)return HANDLER_ERROR;
+	cout << username << endl;
 	string text;
-	while(!instr.fail()){
-		string temp1;
-		instr>>temp1;
-		text+=temp1+ " ";
-	}
+	string temp1;
+	getline(instr, text);
+	//stringstream ss(text);
+	if(instr.fail()) return HANDLER_ERROR;
+	if(eng->exists(username)==false)return HANDLER_ERROR;
+
+
+	// while(ss>>temp1){
+	// 	if(instr.fail()) return HANDLER_ERROR;
+	// 	text+=temp1+ " ";
+	// }
+	//text=text.substr(1, text.size());
+	text=trim(text);
 	DateTime time;
+	cout << text << endl;
 	eng->addTweet(username, time, text);
 	return HANDLER_OK;
+
 }
 
 FollowHandler::FollowHandler()

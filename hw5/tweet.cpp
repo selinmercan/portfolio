@@ -72,7 +72,8 @@ using namespace std;
   * @return the ostream passed in as an argument
   */
  std::ostream& operator<<(std::ostream& os, const Tweet& t){
-  os<<t.time()<<" "<< t.user_->name()<< " "<<t.text();
+  os<<t.time()<<" "<< t.user_->name();
+  if(!t.text().empty())os<<" " <<t.text();
   return os;
  }
 

@@ -104,11 +104,14 @@ using namespace std;
  		stringstream ss(parse.substr(position));
  		string text, username;
  		ss>>username;
- 		while(!ss.fail()){
+ 		while(1){
  			string temp;
  			ss>>temp;
+ 			if(ss.fail())break;
  			text+=temp+ " ";
  		}
+ 		text=text.substr(0, text.size()-1);
+ 		cout<<text << endl;
  		addTweet(username, *date_time, text); 
 
  		
@@ -126,13 +129,15 @@ using namespace std;
  //do I create a new user if i cannot find the username??
  void TwitEng::addTweet(const std::string& username, const DateTime& time, const std::string& text){
  	if(exists(username)){
+ 		cout <<"here"<<endl;
 	 	User* temp=find_User(username);
 	 	Tweet* new_tweet=new Tweet(temp, time, text);
 	 	stringstream ss(text);
+	 	cout << text << endl;
 	 	int i=0;
-	 	while(!ss.fail()){
-	 		string temp1;
-	 		ss>>temp1;
+	 	string temp1;
+	 	while(ss>>temp1){
+	 		cout<< temp1 << endl;
 	 		if(temp1[0]=='@'){
 	 			temp1=temp1.substr(1);
 	 			find_User(temp1)->add_Mentioned(new_tweet);
@@ -144,6 +149,7 @@ using namespace std;
 	 		if(temp1[0]=='#'){
 	 			temp1=temp1.substr(1);
 	 			convUpper(temp1);
+	 			cout << temp1 << endl;
 	 			if(hashtags[temp1].find(new_tweet)==hashtags[temp1].end())hashtags[temp1].insert(new_tweet); 
 	 			if(new_tweet->hashTags().find(temp1.substr(1))==new_tweet->hashTags().end())new_tweet->hashTags().insert(temp1.substr(1));
 	 		}
@@ -202,31 +208,31 @@ using namespace std;
  		for(set<Tweet*>::iterator it=hashtags[temp].begin(); it!=hashtags[temp].end(); ++it){
  			texts.push_back(*it);
  		}
- 		hsort(texts, TweetComp());
+ 		hsort(texts, t_comp());
  		return texts;
  	}
  	else{
  		int k=0;
- 		if(k<terms.size())convUpper(terms[k]);
+ 		if((uint)k<terms.size())convUpper(terms[k]);
  		else return texts;
  		while(hashtags.find(terms[k])==hashtags.end()){
  			k++;
- 			if(k>=terms.size())break;
+ 			if((uint)k>=terms.size())break;
  		}
- 		if(k>=terms.size())return texts;
+ 		if((uint)k>=terms.size())return texts;
  		int j=k+1;
- 		if(j<terms.size())convUpper(terms[j]);
+ 		if((uint)j<terms.size())convUpper(terms[j]);
 		else{
 			set<Tweet*> returning=hashtags[terms[k]];
 			for(set<Tweet*>::iterator it=returning.begin(); it!=returning.end(); ++it){
 				texts.push_back(*it);
 			}
-			hsort(texts, TweetComp());
+			hsort(texts, t_comp());
 			return texts;
  		}
  		while(hashtags.find(terms[j])==hashtags.end()){
  			j++;
- 			if(j>=terms.size())break;
+ 			if((uint)j>=terms.size())break;
  		}
  		
 
@@ -234,11 +240,11 @@ using namespace std;
 	 	set<Tweet*> set2=hashtags[terms[j]];
 	 	if(strategy==0){
 	 		set<Tweet*> intersect= intersection(set1, set2);
-	 		if(j==terms.size()-1){
+	 		if((uint)j==terms.size()-1){
 	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
-	 			hsort(texts, TweetComp());
+	 			hsort(texts, t_comp());
 	 			return texts;
 	 		}
 	 		else{
@@ -250,7 +256,7 @@ using namespace std;
 	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
-	 			hsort(texts, TweetComp());
+	 			hsort(texts, t_comp());
 	 			return texts;
 	 		}
 	 	}
@@ -260,7 +266,7 @@ using namespace std;
 	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
-	 			hsort(texts, TweetComp());
+	 			hsort(texts, t_comp());
 	 			return texts;
 	 		}
 	 		else{
@@ -272,7 +278,7 @@ using namespace std;
 	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
-	 			hsort(texts, TweetComp());
+	 			hsort(texts, t_comp());
 	 			return texts;
 	 		}
 	 	}

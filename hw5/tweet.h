@@ -88,6 +88,14 @@ struct TweetComp
 {
   bool operator()(Tweet* t1, Tweet* t2)
   {
+    return (*t2 < *t1);
+  }
+};
+
+struct t_comp
+{
+  bool operator()(Tweet* t1, Tweet* t2)
+  {
     return (*t1 < *t2);
   }
 };

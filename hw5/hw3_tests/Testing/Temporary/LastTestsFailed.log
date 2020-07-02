@@ -1,9 +1,3 @@
-3:AndTest.TwoHashTags
-4:AndTest.OneHashTags
-7:OrTest.TwoHashTags
-8:OrTest.OneHashTags
-9:OrTest.DoubleTags
-10:AndTest.DoubleTags
 14:AndHandlerTest.ProcessAndOneHashtag
 15:AndHandlerTest.ProcessAndTwoHashtags
 16:AndHandlerTest.ProcessAndManyHashtag
@@ -17,4 +11,3 @@
 47:OStream.EmptyTweet
 48:OStream.ShortTweet
 49:OStream.LongTweet
-57:OStream.Default
