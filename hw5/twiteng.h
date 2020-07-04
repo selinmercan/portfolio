@@ -56,7 +56,7 @@ class TwitEng
 
   bool exists(std::string username);//checks if a user exists from a given username
 
-  void dumpSave(std::string& filename);
+  void dumpSave(std::string& filename);//used for the save handler and takes in a filename to create an ofile
 
   /* You may add other member functions */
  private:

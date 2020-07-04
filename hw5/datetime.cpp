@@ -69,12 +69,36 @@ bool DateTime::operator==(const DateTime& other) const{
  */
 ostream& operator<<(std::ostream& os, const DateTime& other){
 	string month=to_string(other.month);
+	string day=to_string(other.day);
+	string hour=to_string(other.hour);
+	string minute=to_string(other.min);
+	string second=to_string(other.sec);
 	if(other.month<10){
 		string pre="0";
 		pre+=month;
 		month=pre;
 	}
-	os<<other.year<<"-"<<month<<"-"<<other.day<<" "<<other.hour<<":"<<other.min<<":"<<other.sec;
+	if(other.day<10){
+		string pre="0";
+		pre+=day;
+		day=pre;
+	}
+	if(other.hour<10){
+		string pre="0";
+		pre+=hour;
+		hour=pre;
+	}
+	if(other.min<10){
+		string pre="0";
+		pre+=minute;
+		minute=pre;
+	}
+	if(other.sec<10){
+		string pre="0";
+		pre+=second;
+		second=pre;
+	}
+	os<<other.year<<"-"<<month<<"-"<<day<<" "<<hour<<":"<<minute<<":"<<second;
 	return os;
 }
 

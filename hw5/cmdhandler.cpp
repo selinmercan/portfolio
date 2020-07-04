@@ -81,16 +81,11 @@ bool OrHandler::canHandle(const std::string& cmd) const
 Handler::HANDLER_STATUS_T OrHandler::process(TwitEng* eng, std::istream& instr) const
 {
 	vector<string> tags;
-	//string temp;
-	//getline(instr, temp);
 	if(instr.fail()) return HANDLER_ERROR;
-	//stringstream ss(temp);
 	string temp2;
 	while(instr>>temp2){
 		if(temp2.empty()) continue;
-		//if(temp2.empty()) return HANDLER_ERROR;
 		tags.push_back(temp2);
-		//size++;
 	}
 	vector<Tweet*> returned;
 	returned=eng->search(tags, 1);
@@ -123,16 +118,8 @@ Handler::HANDLER_STATUS_T TweetHandler::process(TwitEng* eng, std::istream& inst
 	string text;
 	string temp1;
 	getline(instr, text);
-	//stringstream ss(text);
 	if(instr.fail()) return HANDLER_ERROR;
 	if(eng->exists(username)==false)return HANDLER_ERROR;
-
-
-	// while(ss>>temp1){
-	// 	if(instr.fail()) return HANDLER_ERROR;
-	// 	text+=temp1+ " ";
-	// }
-	//text=text.substr(1, text.size());
 	text=trim(text);
 	DateTime time;
 	cout << text << endl;
@@ -160,10 +147,13 @@ bool FollowHandler::canHandle(const std::string& cmd) const
 
 Handler::HANDLER_STATUS_T FollowHandler::process(TwitEng* eng, std::istream& instr) const
 {
-	if(instr.fail()) return HANDLER_ERROR;
 	string following, followed;
 	instr>>following;
+	if(instr.fail()) return HANDLER_ERROR;
+	if(following.empty())return HANDLER_ERROR;
 	instr>>followed;
+	if(instr.fail()) return HANDLER_ERROR;
+	if(followed.empty())return HANDLER_ERROR;
 	eng->add_Follower(following, followed);
 	return HANDLER_OK;
 }
@@ -187,10 +177,10 @@ bool SaveHandler::canHandle(const std::string& cmd) const
 
 Handler::HANDLER_STATUS_T SaveHandler::process(TwitEng* eng, std::istream& instr) const
 {
-	if(instr.fail()) return HANDLER_ERROR;
 	string file;
 	instr>>file;
-	cout << file << endl;
+	if(instr.fail()) return HANDLER_ERROR;
+	if(file.empty())return HANDLER_ERROR;
 	eng->dumpSave(file);
 	return HANDLER_OK;
 }

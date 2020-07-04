@@ -69,7 +69,6 @@ using namespace std;
 		 		}
 	 		}
 	 		users.insert(user1);
-	 		//cout << user1->name() << endl;
 	 	}
 	 	else{
 	 		User* temp=find_User(user);
@@ -82,7 +81,6 @@ using namespace std;
 		 			temp->addFollowing(user2);
 		 			user2->addFollower(temp);
 		 			users.insert(user2);
-		 			//cout << followed << endl;
 		 		}
 		 		else{
 		 			temp->addFollowing(find_User(followed));
@@ -97,9 +95,10 @@ using namespace std;
  		int position=0;
  		while(isspace(parse[position]))position++;
  		if(!isdigit(parse[position])) return true;
- 		DateTime* date_time=new DateTime();
+ 		//DateTime* date_time=new DateTime();
+ 		DateTime date_time;
  		stringstream s1(parse);
- 		s1>>*date_time;
+ 		s1>>date_time;
  		while(!isalpha(parse[position]))position++;
  		stringstream ss(parse.substr(position));
  		string text, username;
@@ -111,8 +110,7 @@ using namespace std;
  			text+=temp+ " ";
  		}
  		text=text.substr(0, text.size()-1);
- 		cout<<text << endl;
- 		addTweet(username, *date_time, text); 
+ 		addTweet(username, date_time, text); 
 
  		
  	}
@@ -129,15 +127,12 @@ using namespace std;
  //do I create a new user if i cannot find the username??
  void TwitEng::addTweet(const std::string& username, const DateTime& time, const std::string& text){
  	if(exists(username)){
- 		cout <<"here"<<endl;
 	 	User* temp=find_User(username);
 	 	Tweet* new_tweet=new Tweet(temp, time, text);
 	 	stringstream ss(text);
-	 	cout << text << endl;
 	 	int i=0;
 	 	string temp1;
 	 	while(ss>>temp1){
-	 		cout<< temp1 << endl;
 	 		if(temp1[0]=='@'){
 	 			temp1=temp1.substr(1);
 	 			find_User(temp1)->add_Mentioned(new_tweet);
@@ -149,7 +144,6 @@ using namespace std;
 	 		if(temp1[0]=='#'){
 	 			temp1=temp1.substr(1);
 	 			convUpper(temp1);
-	 			cout << temp1 << endl;
 	 			if(hashtags[temp1].find(new_tweet)==hashtags[temp1].end())hashtags[temp1].insert(new_tweet); 
 	 			if(new_tweet->hashTags().find(temp1.substr(1))==new_tweet->hashTags().end())new_tweet->hashTags().insert(temp1.substr(1));
 	 		}
@@ -160,25 +154,6 @@ using namespace std;
 	 	
 	 }
 	 else{
-	 	// User* temp= new User(username);
-	 	// users.insert(temp);
-	 	// Tweet* new_tweet=new Tweet(temp, time, text);
-	 	// stringstream ss(text);
-	 	// while(!ss.fail()){
-	 	// 	string temp1;
-	 	// 	ss>>temp1;
-	 	// 	if(temp1[0]=='@'){
-	 	// 		temp1=temp1.substr(1);
-	 	// 		find_User(temp1)->add_Mentioned(new_tweet);
-	 	// 	}
-	 	// 	if(temp1[0]=='#'){
-	 	// 		temp1=temp1.substr(1);
-	 	// 		convUpper(temp1);
-	 	// 		if(hashtags[temp1].find(new_tweet)==hashtags[temp1].end())hashtags[temp1].insert(new_tweet); 
-	 	// 		if(new_tweet->hashTags().find(temp1.substr(1))==new_tweet->hashTags().end())new_tweet->hashTags().insert(temp1.substr(1));
-	 	// 	}
-	 	// }
-	 	// temp->addTweet(new_tweet);
 	 	throw invalid_argument("user does not exist");
 	 }
 
@@ -217,37 +192,35 @@ using namespace std;
  		else return texts;
  		while(hashtags.find(terms[k])==hashtags.end()){
  			k++;
- 			if((uint)k>=terms.size())break;
- 		}
- 		if((uint)k>=terms.size())return texts;
+ 			if((uint)k>=terms.size())break; //checks if the hashtags asked for is found, if it reaches
+ 		}									//the size of the terms vector and none of the hashtags are found
+ 		if((uint)k>=terms.size())return texts;//we just return an empty vector
  		int j=k+1;
- 		if((uint)j<terms.size())convUpper(terms[j]);
+ 		if((uint)j<terms.size())convUpper(terms[j]);//if the other hashtag is inside the vector size
 		else{
 			set<Tweet*> returning=hashtags[terms[k]];
 			for(set<Tweet*>::iterator it=returning.begin(); it!=returning.end(); ++it){
-				texts.push_back(*it);
+				texts.push_back(*it); //if k-th term was the end of the terms vector so only one of the hashtags exist
 			}
 			hsort(texts, t_comp());
 			return texts;
  		}
- 		while(hashtags.find(terms[j])==hashtags.end()){
+ 		while(hashtags.find(terms[j])==hashtags.end()){//if kth term was not the last term on the terms vector
  			j++;
  			if((uint)j>=terms.size())break;
- 		}
- 		
-
-	 	set<Tweet*> set1=hashtags[terms[k]];
-	 	set<Tweet*> set2=hashtags[terms[j]];
+ 		}//this is done because in order to consecutively compute intersection, the intersection of the first two sets
+	 	set<Tweet*> set1=hashtags[terms[k]];//is needed to create an intersect set and use it as a parameter in the intersection
+	 	set<Tweet*> set2=hashtags[terms[j]];//function for the other terms 
 	 	if(strategy==0){
 	 		set<Tweet*> intersect= intersection(set1, set2);
-	 		if((uint)j==terms.size()-1){
+	 		if((uint)j==terms.size()-1){//if j-th term was the last term in the terms vector
 	 			for(set<Tweet*>::iterator it=intersect.begin(); it!=intersect.end(); ++it){
 	 				texts.push_back(*it);
 	 			}
 	 			hsort(texts, t_comp());
 	 			return texts;
 	 		}
-	 		else{
+	 		else{ //if the j-th term was not the last term on the terms vector 
 	 			for(unsigned int i=j+1; i<terms.size(); i++){
 	 				convUpper(terms[i]);
 	 				if(hashtags.find(terms[i])==hashtags.end())continue;
@@ -262,7 +235,7 @@ using namespace std;
 	 	}
 	 	else{
 	 		set<Tweet*> union_of=union_(set1, set2);
-	 		if(j==terms.size()-1){
+	 		if((uint)j==terms.size()-1){
 	 			for(set<Tweet*>::iterator it=union_of.begin(); it!=union_of.end(); ++it){
 	 				texts.push_back(*it);
 	 			}

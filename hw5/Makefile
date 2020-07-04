@@ -1,4 +1,7 @@
-all:twitter
+all:twitter heap
+
+heap: 
+	g++ -g -Wall -std=c++11 heap.h -o heap
 
 twitter: twitter.cpp user.o tweet.o datetime.o cmdhandler.o handler.o util.o twiteng.o
 	g++ -g -Wall -std=c++11 twitter.cpp user.o tweet.o datetime.o cmdhandler.o handler.o util.o twiteng.o -o twitter
@@ -36,3 +39,4 @@ clean:
 	rm datetime.o
 	rm twiteng.o
 	rm tweet.o
+	rm heap

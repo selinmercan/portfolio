@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/student/hw-mercan/hw5/heap.h
+functional
+-
+stdexcept
+-
+vector
+-
+
+/home/student/hw-mercan/hw5/hw5_heap_checker/heap_tests/heap_tests.cpp
+heap.h
+-
+gtest/gtest.h
+-
+random_generator.h
+-
+queue
+-
+algorithm
+-
+
+testing_utils/./random_generator.h
+random
+-
+vector
+-
+set
+-
+string
+-
+cstdint
+-
+
