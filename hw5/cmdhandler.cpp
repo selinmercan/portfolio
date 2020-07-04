@@ -151,9 +151,11 @@ Handler::HANDLER_STATUS_T FollowHandler::process(TwitEng* eng, std::istream& ins
 	instr>>following;
 	if(instr.fail()) return HANDLER_ERROR;
 	if(following.empty())return HANDLER_ERROR;
+	if(eng->exists(following)) return HANDLER_ERROR;
 	instr>>followed;
 	if(instr.fail()) return HANDLER_ERROR;
 	if(followed.empty())return HANDLER_ERROR;
+	if(eng->exists(followed))return HANDLER_ERROR;
 	eng->add_Follower(following, followed);
 	return HANDLER_OK;
 }
