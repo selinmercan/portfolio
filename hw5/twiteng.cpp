@@ -131,14 +131,16 @@ using namespace std;
 	 	Tweet* new_tweet=new Tweet(temp, time, text);
 	 	stringstream ss(text);
 	 	int i=0;
+	 	int start_w_mention=0; //if the tweet starts w a mention
 	 	string temp1;
 	 	while(ss>>temp1){
 	 		if(temp1[0]=='@'){
 	 			temp1=temp1.substr(1);
-	 			find_User(temp1)->add_Mentioned(new_tweet);
-	 			if(i==0){
+	 			if(start_w_mention==0)find_User(temp1)->add_Mentioned(new_tweet);//for indirect mentions 
+	 			if(i==0){//if the tweet starts w a mention
 	 				User* excluded=find_User(temp1);
 					temp->add_Hidden(new_tweet, excluded);
+					start_w_mention=1;
 	 			}
 	 		}
 	 		if(temp1[0]=='#'){
@@ -308,16 +310,18 @@ set<Tweet*> TwitEng::union_(set<Tweet*>& s1, set<Tweet*>& s2){
 
  }
 
+
  void TwitEng::dumpSave(string& filename){
  	ofstream ofile;
- 	filename+=".dat";
  	ofile.open(filename);
  	ofile<<num_users<<endl;
  	for(set<User*>::iterator it=users.begin(); it!=users.end(); ++it){
  		ofile<<(*it)->name()<<" ";
+ 		cout <<(*it)->name()<<" ";
  		set<User*> followings=(*it)->following();
  		for(set<User*>::iterator it2=followings.begin(); it2!=followings.end(); ++it2){
  			ofile<<(*it2)->name()<<" ";
+ 			cout<<(*it2)->name()<<" ";
  		}
  		ofile<<endl;
  	}

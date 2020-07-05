@@ -54,9 +54,7 @@ void User::add_Hidden_list(Tweet *t){
 	hidden_.insert(t);
 }
 void User::add_Hidden(Tweet* t, const User* excluded){
-	cout <<"in beginning of hidden" << endl;
 	for(set<User*>::iterator it=this->followers_.begin(); it!=this->followers_.end(); ++it){
-		cout << "in hidden" << endl;
 		if((*it)->name()!=excluded->name())(*it)->add_Hidden_list(t);
 	}
 }

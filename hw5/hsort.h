@@ -27,9 +27,9 @@ void heapify(std::vector<T>& data, size_t loc, size_t effsize, Comparator& c ){
 	int wanted_child=2*loc+1;
 	if(2*loc+2<effsize){
 		int rchild=wanted_child+1;
-		if(c(data[rchild], data[wanted_child])) wanted_child=rchild;
+		if(c(data[wanted_child], data[rchild])) wanted_child=rchild;
 	}
-	if(c(data[wanted_child], data[loc])){
+	if(c(data[loc], data[wanted_child])){
 		T temp=data[loc];
 		data[loc]=data[wanted_child];
 		data[wanted_child]=temp;

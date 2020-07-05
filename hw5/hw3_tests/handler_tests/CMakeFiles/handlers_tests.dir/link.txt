@@ -1,1 +1,0 @@
-/usr/bin/c++    -Wall -g3 -O0   CMakeFiles/handlers_tests.dir/handler_tests.cpp.o  -o handlers_tests libhw3_handlers.a ../testing_utils/libtesting_utils.a /usr/lib/libgtest_main.a /usr/lib/libgtest.a -lpthread ../testing_utils/kwsys/libkwsys.a ../testing_utils/libperf/libperf.a 

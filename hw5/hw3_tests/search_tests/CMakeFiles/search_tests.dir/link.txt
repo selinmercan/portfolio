@@ -1,1 +1,0 @@
-/usr/bin/c++    -Wall -g3 -O0   CMakeFiles/search_tests.dir/search_tests.cpp.o  -o search_tests libhw3_search.a ../testing_utils/libtesting_utils.a /usr/lib/libgtest_main.a /usr/lib/libgtest.a -lpthread ../testing_utils/kwsys/libkwsys.a ../testing_utils/libperf/libperf.a 
