@@ -1,1 +1,1 @@
-This project is on recursion and creating deques and stacks with the implementation of linked lists.
+This project's main focus is on recursion and stacks. In rem_dup_lib, recursion is used to detect and remove duplicates on a list. In stack, the stack structure is created using a deque. In laundry, the stack data structure is used: there are two colors of laundries, black and white, and in order to not mix them up, if the same colors are thrown consecutively in the laundry, the stack is popped. 
