@@ -1,1 +1,0 @@
-This project is on recursion and creating deques and stacks with the implementation of linked lists.
