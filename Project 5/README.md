@@ -1,0 +1,2 @@
+This is a project designed to mimic twitter functions such as searching for multiple hashtags, getting feeds and adding tweets.
+The heap.h part of the project is designed to create heaps without using the built in methods of c++. The heap is created with a vector and gets the structure of a heap through the consecutive calls to the heapify function.
