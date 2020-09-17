@@ -1,2 +1,2 @@
-This project is on abstract data types and STL Implementation. 
+This project is focused on abstract data types and STL Implementation. 
 In majors, I made use of maps to categorize people based on their majors. The program makes use of setops, in which I define the logical AND and OR  operators for the contents of two sets. The sets are the inputs and the returning item is a new set. The input of people and the classes are taken in to create sets and these sets are the values of maps that have the courses as their keys. 
