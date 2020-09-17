@@ -1,1 +1,0 @@
-this project is about binary and avl search trees. while the avl tree class inherits from the bst class, it has additional features such as making rotations whenever there is a difference larger than 1 in the height of the children of a node. These implementations are used in place of the map class in sat_solver
