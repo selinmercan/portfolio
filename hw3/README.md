@@ -1,1 +1,1 @@
-This is a project designed to mimic twitter functions such as searching for multiple hashtags, getting feeds and adding tweets
+This is a project designed to mimic twitter functions such as searching for multiple hashtags, getting feeds and adding tweets. The users are able to search through hashtags. The returning files consist of the tweets with the hashtag that is searched for.
