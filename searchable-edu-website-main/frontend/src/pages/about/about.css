@@ -1,0 +1,28 @@
+.body-about {
+  text-align: center;
+  background-color: rgb(244, 244, 244);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+}
+.body-about {
+  margin-top: 50px;
+  font-size: 25pt;
+}
+.info-about {
+  vertical-align: middle;
+}
+.body-about .info-about {
+  font-size: 15pt;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inTextLink {
+  cursor: pointer;
+  color: rgb(157, 0, 0);
+}

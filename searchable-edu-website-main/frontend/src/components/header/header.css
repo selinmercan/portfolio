@@ -1,0 +1,44 @@
+@import url("https://use.typekit.net/kfg2wkt.css");
+.header {
+  /*padding: 20px;*/
+  width: 100%;
+}
+
+.col.oone,
+.col.twoo {
+  background-color: rgb(120, 26, 15);
+}
+
+.deptTitle {
+  margin-top: 6%;
+  margin-left: 20px;
+  color: white;
+  font-size: 1.9vw;
+  margin-bottom: 0px;
+  font-family: adobe-caslon-pro, serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.deptBody {
+  margin-left: 20px;
+  margin-bottom: 0px;
+  color: white;
+  font-size: 1.8vw;
+  font-family: adobe-caslon-pro, serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.deptBody2 {
+  margin-left: 20px;
+  color: white;
+  font-size: 1.6vw;
+  font-family: adobe-caslon-pro, serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.col.twoo img {
+  width: 70%;
+  height: auto;
+  float: right;
+}
