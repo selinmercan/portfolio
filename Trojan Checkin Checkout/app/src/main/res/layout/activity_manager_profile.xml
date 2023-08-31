@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManagerProfileActivity">
+
+    <View
+        android:id="@+id/banner"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:background="#9D2235"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/managerprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Manager Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/welcomeback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Welcome back!"
+        android:textColor="#000000"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
+
+    <ImageView
+        android:id="@+id/tommy"
+        android:layout_width="108dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="276dp"
+        android:src="@drawable/tommytrojan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeback" />
+
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manager:"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeback"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="171dp"
+        android:layout_height="25dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeback" />
+
+    <Button
+        android:id="@+id/editPhoto"
+        android:layout_width="192dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_main"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="editPhoto"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info"
+        app:strokeColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/editPassword"
+        android:layout_width="192dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_main"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="editPassword"
+        android:text="Change Password"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPhoto"
+        app:strokeColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="192dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_main"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="signOut"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        app:strokeColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="192dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_main"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="deleteAlert"
+        android:text="Delete Account"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signout"
+        app:strokeColor="#FFFFFF" />
+
+    <View
+        android:id="@+id/down_banner"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:background="#9D2235"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/buildings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="35dp"
+        android:contentDescription="@string/buildings"
+        android:onClick="loadBuildingList"
+        android:src="@drawable/buildings_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/search"/>
+
+    <TextView
+        android:id="@+id/building_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loadBuildingList"
+        android:text="@string/building"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/searchtext"/>
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="35dp"
+        android:contentDescription="@string/search"
+        android:onClick="loadSearch"
+        android:src="@drawable/search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/buildings"/>
+
+    <TextView
+        android:id="@+id/searchtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loadSearch"
+        android:text="Search"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/building_label"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuildingInfoActivity">
+
+    <View
+        android:id="@+id/banner"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:background="#9D2235"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="364dp"
+        android:src="@drawable/back"
+        android:onClick="goBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/building_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/qrcode"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <ImageView
+        android:id="@+id/qrcode"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="64dp"
+        android:src="@drawable/back"
+        app:layout_constraintBottom_toTopOf="@+id/capacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <TextView
+        android:id="@+id/capacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="280dp"
+        android:text="Capacity: "
+        android:textColor="#000000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qrcode" />
+
+    <TextView
+        android:id="@+id/label_for_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="36dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toEndOf="@+id/capacity"
+        app:layout_constraintTop_toBottomOf="@+id/qrcode" />
+
+    <EditText
+        android:id="@+id/capacityinput"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/bg_input"
+        android:hint=""
+        android:textColor="#000000"
+        android:textColorHint="#8D8A8A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toEndOf="@+id/label_for_name"
+        app:layout_constraintTop_toBottomOf="@+id/qrcode" />
+
+    <Button
+        android:id="@+id/updatebutton"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_main"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="updateMaxCapacity"
+        android:text="Update max"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFFFF"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/capacityinput"
+        app:layout_constraintTop_toBottomOf="@+id/qrcode" />
+
+    <Button
+        android:id="@+id/current"
+        android:layout_width="192dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="300dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:onClick="viewStudentsInBuilding"
+        android:text="See Current List"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/capacityinput"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <!--    How to add building check in check out information to listview:-->
+    <!--    https://www.tutorialspoint.com/android/android_list_view.htm-->
+    <!--    https://www.vogella.com/tutorials/AndroidListView/article.html-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

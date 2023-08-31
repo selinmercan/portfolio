@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".BuildingCurrentStudentsActivity">
+
+<View
+    android:id="@+id/banner"
+    android:layout_width="match_parent"
+    android:layout_height="71dp"
+    android:background="#9D2235"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+
+<ImageView
+    android:id="@+id/back"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="364dp"
+    android:layout_marginStart="20dp"
+    android:onClick="goBack"
+    android:src="@drawable/back"
+    android:contentDescription="@string/back_button"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+<TextView
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:gravity="center"
+    android:text="Current Students"
+    android:textColor="#FFFFFF"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/title"
+    android:layout_height="0dp">
+    <TableLayout
+        android:id="@id/student_list_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:stretchColumns="1,2,3,4"
+        />
+
+</ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

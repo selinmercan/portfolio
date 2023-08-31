@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.trojancheckincheckout">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TrojanCheckInCheckOut">
+        <activity android:name=".ForgotPasswordAccountActivity"></activity>
+        <activity android:name=".ForgotPasswordManagerActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".UserHistoryActivity" />
+        <activity android:name=".CheckinActivity" />
+        <activity android:name=".ManagerImportActivity" />
+        <activity android:name=".ManagerBuildingsActivity" />
+        <activity
+            android:name=".Scanner"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true" />
+        <activity android:name=".BuildingInfoActivity" />
+        <activity android:name=".ManagerSearchActivity" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <activity android:name=".SearchResultsActivity" />
+        <activity android:name=".BuildingCurrentStudentsActivity" />
+        <activity android:name=".StudentDetailsActivity" />
+        <activity android:name=".ProfileEditActivity" />
+        <activity
+            android:name=".ManagerProfileActivity"
+            android:label="@string/title_activity_manager_profile" />
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".StudentProfileActivity"
+            android:label="@string/title_activity_student_profile" />
+        <activity android:name=".ManagerRegisterActivity" />
+        <activity android:name=".StudentRegisterActivity" />
+        <activity android:name=".RestoreActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "315103352001",
+    "project_id": "trojan-check-in-check-out",
+    "storage_bucket": "trojan-check-in-check-out.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315103352001:android:84e881880331a3c85df040",
+        "android_client_info": {
+          "package_name": "com.example.trojancheckincheckout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315103352001-rnripsdj4elh2rq52np6mfe1thobma28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiK8G2Jip8zOxWQcIszWOZYcIwZAkZIBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315103352001-rnripsdj4elh2rq52np6mfe1thobma28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

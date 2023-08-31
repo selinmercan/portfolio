@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="navig_import" type="id" />
+    <item name="navig_search" type="id" />
+    <item name="checkin" type="id" />
+    <item name="navig_hist" type="id" />
+    <item name="managerBuildingTable" type="id" />
+    <item name="student_list_table" type="id" />
+    <item name="scroll" type="id" />
+</resources>
