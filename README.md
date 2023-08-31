@@ -1,1 +1,0 @@
-Searchable Open Educational Resource Website
