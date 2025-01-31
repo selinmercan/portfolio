@@ -1,0 +1,49 @@
+---
+collections:
+  selinmercan/takehome/product_metrics2:
+    schema:
+      type: object
+      properties:
+        product_id:
+          type: integer
+        name:
+          type: string
+          default: ""
+          reduce: { strategy: maximize }
+        total_quantity:
+          type: integer
+          default: 0
+          reduce: { strategy: sum }
+        total_sales:
+          type: integer
+          default: 0
+          reduce: { strategy: sum }
+
+      required:
+        - product_id
+
+      reduce:
+        strategy: merge
+    key:
+      - /product_id
+    derive:
+      using:
+        sqlite:
+          migrations: []
+      transforms:
+        - name: products
+          source:
+            name: selinmercan/takehome/products
+          shuffle:
+            key:
+              - /product_id
+          lambda: |
+            select $product_id, $product_name as name;
+        - name: sales
+          source:
+            name: selinmercan/takehome/sales
+          shuffle:
+            key:
+              - /product_id
+          lambda: |
+            select $product_id, $quantity as total_quantity, $sale_amount as total_sales;
